@@ -1,21 +1,29 @@
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
-  buttonBlackText: {
-    fontSize: 20,
-    color: '#595856',
-  },
-  primaryButton: {
-    backgroundColor: '#34A853',
-  },
-  signInButton: {
-    backgroundColor: '#595856',
+  primaryButtonVariation: {
+    backgroundColor: 'steelblue',
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
+    margin: 20,
   },
-  signInText: {
+  primaryButtonTitle: {
     color: 'white',
-    fontSize: 20,
+  },
+  secondaryButtonVariation: {
+    padding: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    margin: 20,
+  },
+  thirdButtonVariation: {
+    padding: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    backgroundColor: 'lightgray',
+    margin: 20,
   },
 });

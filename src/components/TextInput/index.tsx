@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import {FloatingLabelInput} from 'react-native-floating-label-input';
 import styles from './styles';
 
-interface customTextInputProps {
+interface defaultTextInputProps {
   label: string;
   value: string;
   isSecure: boolean;
   onChangeText(arg0: string): void;
 }
 
-const CustomTextInput = (props: customTextInputProps) => {
+const DefaultTextInput = (props: defaultTextInputProps) => {
   //const [value, setValue] = useState('');
   return (
     <FloatingLabelInput
@@ -25,4 +25,4 @@ const CustomTextInput = (props: customTextInputProps) => {
   );
 };
 
-export default CustomTextInput;
+export default DefaultTextInput;

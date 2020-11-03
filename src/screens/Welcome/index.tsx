@@ -9,6 +9,8 @@ import {
 import CustomButton from '../../components/Button';
 import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/TextInput';
+import DefaultButtonStyle from '../../components/Button/styles';
+import {ButtonVariationsEnum} from '../../enums';
 
 interface welcomeProps {
   navigation: any;
@@ -33,7 +35,13 @@ const Welcome = (props: welcomeProps) => {
           isSecure={false}
           onChangeText={(value) => setUserName(value)}
         />
-        <CustomButton title="Continue" onPress={() => onPress()} />
+        <CustomButton
+          style={DefaultButtonStyle.primaryButtonVariation}
+          variationType={ButtonVariationsEnum.primary}
+          title="Continue"
+          titleColor={'white'}
+          onPress={() => onPress()}
+        />
       </View>
     </View>
   );

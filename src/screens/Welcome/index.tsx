@@ -11,6 +11,8 @@ import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/TextInput';
 import DefaultButtonStyle from '../../components/Button/styles';
 import {ButtonVariationsEnum} from '../../enums';
+import {useDispatch, useSelector} from 'react-redux';
+import {saveUserDetails} from './actions';
 
 interface welcomeProps {
   navigation: any;
@@ -18,9 +20,12 @@ interface welcomeProps {
 
 const Welcome = (props: welcomeProps) => {
   const [userName, setUserName] = React.useState('');
+  const dispatch = useDispatch();
 
   const onPress = () => {
     if (userName.trim().length > 0) {
+      const user = {name: userName};
+      dispatch(saveUserDetails(user));
       props.navigation.navigate('ButtonVariations');
     }
   };

@@ -16,6 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TypescriptReactNativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TypescriptReactNativeTests.m */; };
+		415D6C5C2553C6DF006F3509 /* TargetOSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 415D6C5B2553C6DF006F3509 /* TargetOSManager.m */; };
 		6FB3983CE796438B20CA959B /* libPods-TypescriptReactNative-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7762B10D8261096482BB55E8 /* libPods-TypescriptReactNative-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		906A142EE97883E26462AC5E /* libPods-TypescriptReactNative-TypescriptReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F06D6D71B838113921AD914F /* libPods-TypescriptReactNative-TypescriptReactNativeTests.a */; };
@@ -55,6 +56,8 @@
 		2D02E4901E0B4A5D006451C7 /* TypescriptReactNative-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TypescriptReactNative-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37109905C44F85265E9E9738 /* libPods-TypescriptReactNative-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TypescriptReactNative-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3831719239C27CEE2526E769 /* libPods-TypescriptReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TypescriptReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		415D6C5A2553C6DF006F3509 /* TargetOSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetOSManager.h; sourceTree = "<group>"; };
+		415D6C5B2553C6DF006F3509 /* TargetOSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TargetOSManager.m; sourceTree = "<group>"; };
 		4A92F7613D0A3CE4D8C01015 /* Pods-TypescriptReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypescriptReactNative.release.xcconfig"; path = "Target Support Files/Pods-TypescriptReactNative/Pods-TypescriptReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		59980A8F0745012A5A18C968 /* Pods-TypescriptReactNative-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypescriptReactNative-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TypescriptReactNative-tvOS/Pods-TypescriptReactNative-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6A866BECCFF35DDB655E2B5E /* Pods-TypescriptReactNative-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypescriptReactNative-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TypescriptReactNative-tvOSTests/Pods-TypescriptReactNative-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				415D6C5A2553C6DF006F3509 /* TargetOSManager.h */,
+				415D6C5B2553C6DF006F3509 /* TargetOSManager.m */,
 			);
 			name = TypescriptReactNative;
 			sourceTree = "<group>";
@@ -161,7 +166,6 @@
 				BDA23603D936F452CBE64C36 /* Pods-TypescriptReactNative-tvOSTests.debug.xcconfig */,
 				6A866BECCFF35DDB655E2B5E /* Pods-TypescriptReactNative-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -570,6 +574,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				415D6C5C2553C6DF006F3509 /* TargetOSManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +671,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TypescriptReactNative;
+				SWIFT_OBJC_BRIDGING_HEADER = "TypescriptReactNative-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -688,6 +694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TypescriptReactNative;
+				SWIFT_OBJC_BRIDGING_HEADER = "TypescriptReactNative-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

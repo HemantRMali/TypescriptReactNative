@@ -6,15 +6,12 @@ import SwipeButton from 'rn-swipe-button';
 import ScreenTitle from '../../components/ScreenTitle';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers';
+import {NavigationProp} from '@react-navigation/native';
 
 interface ButtonVariationProps {
-  navigation: any;
+  navigation: NavigationProp<any>;
 }
 const diamondIcon = require('../../assets/images/diamond1.png');
-
-const thumbIconComponent = () => (
-  <Image resizeMode="center" source={diamondIcon} />
-);
 
 const ButtonVariation = (props: ButtonVariationProps) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
@@ -46,7 +43,9 @@ const ButtonVariation = (props: ButtonVariationProps) => {
         <SwipeButton
           containerStyles={styles.containerStyles}
           thumbIconStyles={styles.thumbIconStyles}
-          thumbIconComponent={thumbIconComponent}
+          thumbIconComponent={
+            <Image resizeMode="center" source={diamondIcon} />
+          }
           title="Slide me to continue"
           titleColor="white"
           railStyles={styles.railStyles}

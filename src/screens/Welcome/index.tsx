@@ -1,26 +1,31 @@
-import * as React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, StyleSheet, Dimensions, NativeModules, Alert} from 'react-native';
 import CustomButton from '../../components/Button';
 import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/TextInput';
 import DefaultButtonStyle from '../../components/Button/styles';
 import {ButtonVariationsEnum} from '../../enums';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {saveUserDetails} from './actions';
+import {NavigationProp} from '@react-navigation/native';
 
 interface welcomeProps {
-  navigation: any;
+  navigation: NavigationProp<any>;
 }
+const {TargetOSManager} = NativeModules;
 
 const Welcome = (props: welcomeProps) => {
   const [userName, setUserName] = React.useState('');
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    checkTargetOS();
+  }, []);
+
+  const checkTargetOS = async () => {
+    const message = await TargetOSManager.isRunningOnDevice();
+    Alert.alert(message);
+  };
 
   const onPress = () => {
     if (userName.trim().length > 0) {

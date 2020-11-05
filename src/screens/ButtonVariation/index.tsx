@@ -13,6 +13,8 @@ interface ButtonVariationProps {
 }
 const diamondIcon = require('../../assets/images/diamond1.png');
 
+const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
+
 const ButtonVariation = (props: ButtonVariationProps) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
   const navigateToDetails = () => {
@@ -43,9 +45,7 @@ const ButtonVariation = (props: ButtonVariationProps) => {
         <SwipeButton
           containerStyles={styles.containerStyles}
           thumbIconStyles={styles.thumbIconStyles}
-          thumbIconComponent={
-            <Image resizeMode="center" source={diamondIcon} />
-          }
+          thumbIconComponent={thumbIcon}
           title="Slide me to continue"
           titleColor="white"
           railStyles={styles.railStyles}

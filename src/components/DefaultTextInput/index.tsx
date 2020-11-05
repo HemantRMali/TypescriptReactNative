@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FloatingLabelInput} from 'react-native-floating-label-input';
 import styles from './styles';
 
 interface defaultTextInputProps {
   label: string;
   value: string;
-  isSecure: boolean;
+  isSecure?: boolean;
   onChangeText(arg0: string): void;
 }
 
 const DefaultTextInput = (props: defaultTextInputProps) => {
-  //const [value, setValue] = useState('');
   return (
     <FloatingLabelInput
       containerStyles={styles.textInputContainer}
@@ -18,7 +17,6 @@ const DefaultTextInput = (props: defaultTextInputProps) => {
       value={props.value}
       secureTextEntry={props.isSecure}
       onChangeText={(text: string) => {
-        //setValue(text);
         props.onChangeText(text);
       }}
     />

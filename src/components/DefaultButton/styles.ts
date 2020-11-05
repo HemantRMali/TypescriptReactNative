@@ -1,29 +1,31 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../assets/colors';
 export default StyleSheet.create({
-  primaryButtonVariation: {
-    backgroundColor: 'steelblue',
+  primary: {
+    backgroundColor: colors.steelblue,
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
     margin: 20,
   },
-  primaryButtonTitle: {
-    color: 'white',
+  buttonTitle: {
+    fontSize: 20,
   },
-  secondaryButtonVariation: {
+  secondary: {
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
     margin: 20,
+    backgroundColor: colors.transparent,
   },
-  thirdButtonVariation: {
+  third: {
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
-    backgroundColor: 'lightgray',
+    backgroundColor: colors.lightgray,
     margin: 20,
   },
 });

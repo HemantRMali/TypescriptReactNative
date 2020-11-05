@@ -1,15 +1,18 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import DefaultButton from '../../components/Button';
-import DefaultButtonStyle from '../../components/Button/styles';
+import {Text, View, Image} from 'react-native';
+import DefaultButton from '../../components/DefaultButton';
 import SwipeButton from 'rn-swipe-button';
 import ScreenTitle from '../../components/ScreenTitle';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers';
 import {NavigationProp} from '@react-navigation/native';
+import styles from './styles';
+import {Strings, Screens} from '../../constants';
+import {colors} from '../../assets/colors';
+import {ButtonVariationsEnum} from '../../enums';
 
 interface ButtonVariationProps {
-  navigation: NavigationProp<any>;
+  navigation?: NavigationProp<any>;
 }
 const diamondIcon = require('../../assets/images/diamond1.png');
 
@@ -18,7 +21,7 @@ const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
 const ButtonVariation = (props: ButtonVariationProps) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
   const navigateToDetails = () => {
-    props.navigation.navigate('Details');
+    props.navigation?.navigate(Screens.details);
   };
   return (
     <View style={styles.container}>
@@ -27,29 +30,28 @@ const ButtonVariation = (props: ButtonVariationProps) => {
       <View style={styles.bottomView}>
         <Text style={styles.title}>4 variations of a button</Text>
         <DefaultButton
-          style={DefaultButtonStyle.secondaryButtonVariation}
-          title="Press me"
+          title={Strings.pressMe}
           onPress={navigateToDetails}
+          variationType={ButtonVariationsEnum.secondary}
         />
         <DefaultButton
-          style={DefaultButtonStyle.thirdButtonVariation}
-          title="Press me"
+          title={Strings.pressMe}
           onPress={navigateToDetails}
+          variationType={ButtonVariationsEnum.third}
         />
         <DefaultButton
-          style={DefaultButtonStyle.primaryButtonVariation}
-          title="Press me"
-          titleColor={'white'}
+          title={Strings.pressMe}
           onPress={navigateToDetails}
+          variationType={ButtonVariationsEnum.primary}
         />
         <SwipeButton
           containerStyles={styles.containerStyles}
           thumbIconStyles={styles.thumbIconStyles}
           thumbIconComponent={thumbIcon}
-          title="Slide me to continue"
-          titleColor="white"
+          title={Strings.slideToContinue}
+          titleColor={colors.white}
           railStyles={styles.railStyles}
-          railBackgroundColor="black"
+          railBackgroundColor={colors.black}
           onSwipeStart={() => console.log('swipe started')}
           onSwipeFail={() => console.log('incomplete swipe')}
           onSwipeSuccess={() => navigateToDetails()}
@@ -60,22 +62,3 @@ const ButtonVariation = (props: ButtonVariationProps) => {
 };
 
 export default ButtonVariation;
-
-const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: 'black', opacity: 0.9},
-  bottomView: {
-    width: '100%',
-    position: 'absolute',
-    bottom: 50,
-  },
-
-  textStyle: {
-    color: '#fff',
-    fontSize: 22,
-  },
-  containerStyles: {borderRadius: 10, margin: 20},
-  thumbIconStyles: {borderRadius: 10},
-  railStyles: {backgroundColor: 'black', borderColor: 'black'},
-  title: {color: 'yellow', alignSelf: 'center'},
-  screenTItle: {fontSize: 25, alignSelf: 'flex-end', color: 'white'},
-});

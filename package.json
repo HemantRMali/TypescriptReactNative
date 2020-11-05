@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -26,11 +26,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/preset-typescript": "^7.12.1",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.15",
     "@types/react-native": "^0.63.2",
-    "@types/react-native-vector-icons": "^6.4.6",
     "@types/react-redux": "^7.1.10",
     "@types/react-test-renderer": "^16.9.2",
     "@types/redux-logger": "^3.0.8",
@@ -53,6 +53,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "transformIgnorePatterns": [
+      "TypescriptReactNative/node_modules/(?!rn-swipe-button|react-native)"
     ]
   }
 }

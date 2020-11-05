@@ -1,18 +1,25 @@
 import React, {useEffect} from 'react';
 import {View, StyleSheet, Dimensions, NativeModules, Alert} from 'react-native';
-import CustomButton from '../../components/Button';
+import DefaultButton from '../../components/DefaultButton';
 import ScreenTitle from '../../components/ScreenTitle';
-import CustomTextInput from '../../components/TextInput';
-import DefaultButtonStyle from '../../components/Button/styles';
+import CustomTextInput from '../../components/DefaultTextInput';
+import DefaultButtonStyle from '../../components/DefaultButton/styles';
 import {ButtonVariationsEnum} from '../../enums';
 import {useDispatch} from 'react-redux';
 import {saveUserDetails} from './actions';
 import {NavigationProp} from '@react-navigation/native';
+import {Screens, TextInputLabels, ButtonTitles} from '../../constants';
+import {colors} from '../../assets/colors';
 
 interface welcomeProps {
-  navigation: NavigationProp<any>;
+  navigation?: NavigationProp<any>;
 }
 const {TargetOSManager} = NativeModules;
+
+const checkTargetOS = async () => {
+  const message = await TargetOSManager.isRunningOnDevice();
+  Alert.alert(message);
+};
 
 const Welcome = (props: welcomeProps) => {
   const [userName, setUserName] = React.useState('');
@@ -22,16 +29,11 @@ const Welcome = (props: welcomeProps) => {
     checkTargetOS();
   }, []);
 
-  const checkTargetOS = async () => {
-    const message = await TargetOSManager.isRunningOnDevice();
-    Alert.alert(message);
-  };
-
   const onPress = () => {
     if (userName.trim().length > 0) {
       const user = {name: userName};
       dispatch(saveUserDetails(user));
-      props.navigation.navigate('ButtonVariations');
+      props.navigation?.navigate(Screens.buttonVariations);
     }
   };
 
@@ -40,16 +42,16 @@ const Welcome = (props: welcomeProps) => {
       <ScreenTitle title=" Hi There, Welcome..!" />
       <View style={styles.textInputAndButtonContainer}>
         <CustomTextInput
-          label="Enter Full Name"
+          label={TextInputLabels.enterFullName}
           value={userName}
           isSecure={false}
           onChangeText={(value) => setUserName(value)}
         />
-        <CustomButton
-          style={DefaultButtonStyle.primaryButtonVariation}
+        <DefaultButton
+          style={DefaultButtonStyle.primary}
           variationType={ButtonVariationsEnum.primary}
-          title="Continue"
-          titleColor={'white'}
+          title={ButtonTitles.continue}
+          titleColor={colors.white}
           onPress={() => onPress()}
         />
       </View>

@@ -1,5 +1,5 @@
 /**
- * Filename: User actionType.js
+ * Filename: User constants.js
  */
 
 // Define your action types and import it in required reducers.

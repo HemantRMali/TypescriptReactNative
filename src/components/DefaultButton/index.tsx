@@ -6,7 +6,6 @@ import styles from './styles';
 interface defaultButtonProps {
   onPress?(): void;
   title: string;
-  fontSize: number;
   variationType?: string;
 }
 
@@ -40,7 +39,6 @@ const DefaultButton = (props: defaultButtonProps) => {
 };
 
 DefaultButton.defaultProps = {
-  fontSize: 20,
   variationType: ButtonVariationsEnum.primary,
 };
 export default DefaultButton;

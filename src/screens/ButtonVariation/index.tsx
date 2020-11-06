@@ -5,23 +5,25 @@ import SwipeButton from 'rn-swipe-button';
 import ScreenTitle from '../../components/ScreenTitle';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers';
-import {NavigationProp} from '@react-navigation/native';
 import styles from './styles';
 import {Strings, Screens} from '../../constants';
 import {colors} from '../../assets/colors';
 import {ButtonVariationsEnum} from '../../enums';
+import {useNavigation} from '@react-navigation/native';
 
-interface ButtonVariationProps {
-  navigation?: NavigationProp<any>;
-}
+interface ButtonVariationProps {}
+
 const diamondIcon = require('../../assets/images/diamond1.png');
 
 const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
 
 const ButtonVariation = (props: ButtonVariationProps) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
+
+  const navigation = useNavigation();
+
   const navigateToDetails = () => {
-    props.navigation?.navigate(Screens.details);
+    navigation.navigate(Screens.details);
   };
   return (
     <View style={styles.container}>

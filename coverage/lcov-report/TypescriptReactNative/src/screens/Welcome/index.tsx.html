@@ -123,11 +123,7 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,24 +137,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -166,7 +160,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,8 +169,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,7 +182,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,16 +194,14 @@ import {View, StyleSheet, Dimensions, NativeModules, Alert} from 'react-native';
 import DefaultButton from '../../components/DefaultButton';
 import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/DefaultTextInput';
-import DefaultButtonStyle from '../../components/DefaultButton/styles';
 import {ButtonVariationsEnum} from '../../enums';
 import {useDispatch} from 'react-redux';
 import {saveUserDetails} from './actions';
 import {NavigationProp} from '@react-navigation/native';
 import {Screens, TextInputLabels, ButtonTitles} from '../../constants';
-import {colors} from '../../assets/colors';
 &nbsp;
 interface welcomeProps {
-  navigation?: NavigationProp&lt;any&gt;;
+  navigation: NavigationProp&lt;any&gt;;
 }
 const {TargetOSManager} = NativeModules;
 &nbsp;
@@ -232,7 +222,7 @@ const Welcome = (props: welcomeProps) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (userName.trim().length &gt; 0) {</span>
       const user = <span class="cstat-no" title="statement not covered" >{name: userName};</span>
 <span class="cstat-no" title="statement not covered" >      dispatch(saveUserDetails(user));</span>
-<span class="cstat-no" title="statement not covered" >      props.navigation?.navigate(Screens.buttonVariations);</span>
+<span class="cstat-no" title="statement not covered" >      props.navigation.navigate(Screens.buttonVariations);</span>
     }
   };
 &nbsp;
@@ -247,10 +237,8 @@ const Welcome = (props: welcomeProps) =&gt; {
           onChangeText={<span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; <span class="cstat-no" title="statement not covered" >setUserName(value)}</span>
         /&gt;
         &lt;DefaultButton
-          style={DefaultButtonStyle.primary}
           variationType={ButtonVariationsEnum.primary}
           title={ButtonTitles.continue}
-          titleColor={colors.white}
           onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onPress()}</span>
         /&gt;
       &lt;/View&gt;
@@ -274,7 +262,7 @@ const styles = StyleSheet.create({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 06 2020 09:29:35 GMT+0530 (India Standard Time)
+                at Fri Nov 06 2020 12:20:12 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

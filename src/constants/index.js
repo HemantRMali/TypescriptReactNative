@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 export const Strings = {
   pressMe: 'Press me',
   slideToContinue: 'Slide me to continue',
@@ -12,4 +14,9 @@ export const TextInputLabels = {
 };
 export const ButtonTitles = {
   continue: 'Continue',
+};
+
+export const DeviceInfo = {
+  height: Dimensions.get('screen').height,
+  width: Dimensions.get('screen').width,
 };

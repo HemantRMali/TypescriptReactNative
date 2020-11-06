@@ -1,19 +1,15 @@
 import React, {useEffect} from 'react';
-import {View, StyleSheet, Dimensions, NativeModules, Alert} from 'react-native';
+import {View, NativeModules, Alert} from 'react-native';
 import DefaultButton from '../../components/DefaultButton';
 import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/DefaultTextInput';
-import DefaultButtonStyle from '../../components/DefaultButton/styles';
 import {ButtonVariationsEnum} from '../../enums';
 import {useDispatch} from 'react-redux';
 import {saveUserDetails} from './actions';
-import {NavigationProp} from '@react-navigation/native';
 import {Screens, TextInputLabels, ButtonTitles} from '../../constants';
-import {colors} from '../../assets/colors';
+import {useNavigation} from '@react-navigation/native';
+import styles from './styles';
 
-interface welcomeProps {
-  navigation?: NavigationProp<any>;
-}
 const {TargetOSManager} = NativeModules;
 
 const checkTargetOS = async () => {
@@ -21,8 +17,11 @@ const checkTargetOS = async () => {
   Alert.alert(message);
 };
 
-const Welcome = (props: welcomeProps) => {
+const Welcome = () => {
+  const navigation = useNavigation();
+
   const [userName, setUserName] = React.useState('');
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const Welcome = (props: welcomeProps) => {
     if (userName.trim().length > 0) {
       const user = {name: userName};
       dispatch(saveUserDetails(user));
-      props.navigation?.navigate(Screens.buttonVariations);
+      navigation.navigate(Screens.buttonVariations);
     }
   };
 
@@ -48,10 +47,8 @@ const Welcome = (props: welcomeProps) => {
           onChangeText={(value) => setUserName(value)}
         />
         <DefaultButton
-          style={DefaultButtonStyle.primary}
           variationType={ButtonVariationsEnum.primary}
           title={ButtonTitles.continue}
-          titleColor={colors.white}
           onPress={() => onPress()}
         />
       </View>
@@ -60,11 +57,3 @@ const Welcome = (props: welcomeProps) => {
 };
 
 export default Welcome;
-
-const styles = StyleSheet.create({
-  container: {flex: 1},
-  textInputAndButtonContainer: {
-    marginTop: Dimensions.get('screen').height * 0.2,
-    marginHorizontal: 30,
-  },
-});

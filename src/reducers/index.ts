@@ -11,8 +11,8 @@ import UserReducer from '../screens/Welcome/reducer';
 // Redux: Root Reducer
 const appReducer = combineReducers({
   UserReducer,
-});
+} as any);
 
 export type RootState = ReturnType<typeof appReducer>;
 
-export default (state: RootState, action: any) => appReducer(state, action);
+export default (state: RootState, action: never) => appReducer(state, action);

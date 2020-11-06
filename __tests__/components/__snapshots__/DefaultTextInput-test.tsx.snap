@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefaultTextInput renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#00000000",
+      "borderColor": "#49658c",
+      "borderRadius": 12,
+      "borderWidth": 2,
+      "color": "#49658c",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 30,
+      "paddingBottom": 10,
+      "paddingHorizontal": 11,
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "#49658c",
+        "fontSize": 14,
+        "left": 0,
+        "paddingLeft": 10,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 14,
+          },
+        ],
+        "zIndex": 3,
+      }
+    }
+  >
+    Test Label
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    containerStyles={
+      Object {
+        "marginBottom": 30,
+      }
+    }
+    label="Test Label"
+    onBlur={[Function]}
+    onChangeText={[Function]}
+    onFocus={[Function]}
+    onSelectionChange={[Function]}
+    onSubmitEditing={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "color": "#49658c",
+        "flex": 1,
+        "minHeight": 28,
+        "paddingVertical": 0,
+        "zIndex": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value="Test Value"
+  />
+  <View />
+</View>
+`;

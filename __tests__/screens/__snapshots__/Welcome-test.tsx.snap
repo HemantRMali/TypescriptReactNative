@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "#595856",
+          "fontSize": 40,
+          "margin": 20,
+        },
+        undefined,
+      ]
+    }
+  >
+     Hi There, Welcome..!
+  </Text>
+  <View
+    style={
+      Object {
+        "marginHorizontal": 30,
+        "marginTop": 266.8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "backgroundColor": "#00000000",
+          "borderColor": "#49658c",
+          "borderRadius": 12,
+          "borderWidth": 2,
+          "color": "#49658c",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginBottom": 30,
+          "paddingBottom": 10,
+          "paddingHorizontal": 11,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        onPress={[Function]}
+        style={
+          Object {
+            "color": "#49658c",
+            "fontSize": 14,
+            "left": 0,
+            "paddingLeft": 10,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 14,
+              },
+            ],
+            "zIndex": 3,
+          }
+        }
+      >
+        Enter Full Name
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        containerStyles={
+          Object {
+            "marginBottom": 30,
+          }
+        }
+        label="Enter Full Name"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        onSelectionChange={[Function]}
+        onSubmitEditing={[Function]}
+        rejectResponderTermination={true}
+        secureTextEntry={false}
+        style={
+          Object {
+            "color": "#49658c",
+            "flex": 1,
+            "minHeight": 28,
+            "paddingVertical": 0,
+            "zIndex": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View />
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "steelblue",
+            "borderRadius": 5,
+            "justifyContent": "center",
+            "margin": 20,
+            "padding": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 20,
+              },
+              Object {
+                "color": "white",
+              },
+            ]
+          }
+        >
+          Continue
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

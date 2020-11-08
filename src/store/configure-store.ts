@@ -1,9 +1,3 @@
-/**
-
- * Filename: configureStore.js
- *
- */
-
 import {createStore, applyMiddleware} from 'redux';
 import {createLogger} from 'redux-logger';
 // Imports: Redux Root Reducer

@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, NativeModules, Alert} from 'react-native';
 import DefaultButton from '../../components/DefaultButton';
 import ScreenTitle from '../../components/ScreenTitle';
 import CustomTextInput from '../../components/DefaultTextInput';
-import {ButtonVariationsEnum} from '../../enums';
 import {useDispatch} from 'react-redux';
 import {saveUserDetails} from './actions';
-import {Screens, TextInputLabels, ButtonTitles} from '../../constants';
-import {useNavigation} from '@react-navigation/native';
+import {TextInputLabels, ButtonTitles} from '../../constants';
 import styles from './styles';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../App';
 
 const {TargetOSManager} = NativeModules;
 
@@ -17,10 +17,18 @@ const checkTargetOS = async () => {
   Alert.alert(message);
 };
 
-const Welcome = () => {
-  const navigation = useNavigation();
+export type WelcomeScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Welcome'
+>;
 
-  const [userName, setUserName] = React.useState('');
+interface WelcomeProps {
+  userName?: string;
+  navigation?: WelcomeScreenNavigationProp;
+}
+
+const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
+  const [userName, setUserName] = useState('');
 
   const dispatch = useDispatch();
 
@@ -28,11 +36,13 @@ const Welcome = () => {
     checkTargetOS();
   }, []);
 
-  const onPress = () => {
-    if (userName.trim().length > 0) {
+  const onPressContinue = () => {
+    if (userName.trim().length >= 3) {
       const user = {name: userName};
       dispatch(saveUserDetails(user));
-      navigation.navigate(Screens.buttonVariations);
+      navigation?.navigate('ButtonVariations');
+    } else {
+      Alert.alert('User name should have atleast 3 character');
     }
   };
 
@@ -41,15 +51,17 @@ const Welcome = () => {
       <ScreenTitle title=" Hi There, Welcome..!" />
       <View style={styles.textInputAndButtonContainer}>
         <CustomTextInput
+          testId="userName"
           label={TextInputLabels.enterFullName}
           value={userName}
-          isSecure={false}
+          placeholder={TextInputLabels.enterFullName}
           onChangeText={(value) => setUserName(value)}
         />
         <DefaultButton
-          variationType={ButtonVariationsEnum.primary}
+          testId="continueButton"
           title={ButtonTitles.continue}
-          onPress={() => onPress()}
+          style={styles.button}
+          onPress={() => onPressContinue()}
         />
       </View>
     </View>

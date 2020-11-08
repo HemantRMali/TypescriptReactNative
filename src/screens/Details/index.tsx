@@ -5,7 +5,7 @@ import ScreenTitle from '../../components/ScreenTitle';
 import {RootState} from '../../reducers';
 import styles from './styles';
 
-const Details = () => {
+const Details: React.FC = () => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
 
   return (

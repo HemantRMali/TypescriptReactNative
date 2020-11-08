@@ -16,8 +16,8 @@ import java.util.HashMap;
 public class TargetOSManager extends ReactContextBaseJavaModule {
     private static ReactApplicationContext reactContext;
 
-    private static final String DURATION_SHORT_KEY = "SHORT";
-    private static final String DURATION_LONG_KEY = "LONG";
+    //private static final String DURATION_SHORT_KEY = "SHORT";
+    //private static final String DURATION_LONG_KEY = "LONG";
 
     TargetOSManager(ReactApplicationContext context) {
         super(context);
@@ -30,13 +30,13 @@ public class TargetOSManager extends ReactContextBaseJavaModule {
         return "TargetOSManager";
     }
 
-    @Override
-    public Map<String, Object> getConstants() {
-        final Map<String, Object> constants = new HashMap<>();
-        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
-        return constants;
-    }
+//    @Override
+//    public Map<String, Object> getConstants() {
+//        final Map<String, Object> constants = new HashMap<>();
+//        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
+//        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
+//        return constants;
+//    }
 
     @ReactMethod
     public void isRunningOnDevice(Promise promise) {

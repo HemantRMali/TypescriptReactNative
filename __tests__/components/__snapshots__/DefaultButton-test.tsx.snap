@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DefaultButton renders correctly 1`] = `
+exports[`DefaultButton renders properly 1`] = `
 <View
   accessible={true}
   focusable={false}
@@ -19,25 +19,26 @@ exports[`DefaultButton renders correctly 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "steelblue",
-        "borderRadius": 5,
-        "justifyContent": "center",
-        "margin": 20,
-        "padding": 15,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 5,
+          "justifyContent": "center",
+          "margin": 20,
+          "padding": 15,
+        },
+        undefined,
+      ]
     }
   >
     <Text
       style={
         Array [
           Object {
+            "color": "white",
             "fontSize": 20,
           },
-          Object {
-            "color": "white",
-          },
+          undefined,
         ]
       }
     >

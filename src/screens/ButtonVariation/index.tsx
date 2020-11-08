@@ -6,24 +6,30 @@ import ScreenTitle from '../../components/ScreenTitle';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers';
 import styles from './styles';
-import {Strings, Screens} from '../../constants';
-import {colors} from '../../assets/colors';
-import {ButtonVariationsEnum} from '../../enums';
-import {useNavigation} from '@react-navigation/native';
+import {Strings} from '../../constants';
+import colors from '../../assets/colors';
 
-interface ButtonVariationProps {}
-
-const diamondIcon = require('../../assets/images/diamond1.png');
+import diamondIcon from '../../assets/images/diamond.png';
+import {RootStackParamList} from '../../../App';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
 
-const ButtonVariation = (props: ButtonVariationProps) => {
+type ButtonVariationScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'ButtonVariations'
+>;
+
+interface ButtonVariationProps {
+  userName?: string;
+  navigation?: ButtonVariationScreenNavigationProp;
+}
+
+const ButtonVariation: React.FC<ButtonVariationProps> = ({navigation}) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
 
-  const navigation = useNavigation();
-
   const navigateToDetails = () => {
-    navigation.navigate(Screens.details);
+    navigation?.navigate('Details');
   };
   return (
     <View style={styles.container}>
@@ -34,28 +40,29 @@ const ButtonVariation = (props: ButtonVariationProps) => {
         <DefaultButton
           title={Strings.pressMe}
           onPress={navigateToDetails}
-          variationType={ButtonVariationsEnum.secondary}
+          style={styles.secondary}
+          textStyle={styles.textStyle}
         />
         <DefaultButton
           title={Strings.pressMe}
           onPress={navigateToDetails}
-          variationType={ButtonVariationsEnum.third}
+          style={styles.third}
+          textStyle={styles.textStyle}
         />
         <DefaultButton
           title={Strings.pressMe}
           onPress={navigateToDetails}
-          variationType={ButtonVariationsEnum.primary}
+          style={styles.primary}
         />
         <SwipeButton
           containerStyles={styles.containerStyles}
+          thumbIconBackgroundColor={colors.steelblue}
           thumbIconStyles={styles.thumbIconStyles}
           thumbIconComponent={thumbIcon}
           title={Strings.slideToContinue}
           titleColor={colors.white}
           railStyles={styles.railStyles}
           railBackgroundColor={colors.black}
-          onSwipeStart={() => console.log('swipe started')}
-          onSwipeFail={() => console.log('incomplete swipe')}
           onSwipeSuccess={() => navigateToDetails()}
         />
       </View>

@@ -1,9 +1,12 @@
 // __tests__/ScreenTitle-test.js
 import React from 'react';
-import renderer from 'react-test-renderer';
 import ScreenTitle from '../../src/components/ScreenTitle';
+import {render} from '@testing-library/react-native';
 
-test('ScreenTitle renders correctly', () => {
-  const tree = renderer.create(<ScreenTitle title="Test Title" />).toJSON();
-  expect(tree).toMatchSnapshot();
+describe('ScreenTitle', () => {
+  it('renders properly', () => {
+    const {toJSON} = render(<ScreenTitle title="Test Title" />);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
 });

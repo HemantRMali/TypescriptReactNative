@@ -6,8 +6,9 @@ describe('save user action', () => {
     const userDetails = {name: 'Hemant Mali'};
     const expectedAction = {
       type: UserActions.SAVE_USER,
-      userDetails,
+      payload: userDetails,
     };
+
     expect(actions.saveUserDetails(userDetails)).toEqual(expectedAction);
   });
 });

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -95,27 +95,31 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,36 +139,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from 'react-native-screens/native-stack';
-import {enableScreens} from 'react-native-screens';
-&nbsp;
-enableScreens();
-const Stack = createNativeStackNavigator();
+import {createStackNavigator} from '@react-navigation/stack';
 import {Provider} from 'react-redux';
 import store from './src/store/configure-store';
 &nbsp;
 import Welcome from './src/screens/Welcome';
 import ButtonVariations from './src/screens/ButtonVariation';
 import Details from './src/screens/Details';
-interface appProps {}
 &nbsp;
-const navigationOptions = {
-  headerShown: false,
-  header: null,
+export type RootStackParamList = {
+  Welcome: undefined;
+  ButtonVariations: undefined;
+  Details: undefined;
 };
-const App = (props: appProps) =&gt; {
+&nbsp;
+const RootStack = createStackNavigator&lt;RootStackParamList&gt;();
+&nbsp;
+const App: React.FC = () =&gt; {
   return (
     &lt;Provider store={store}&gt;
       &lt;NavigationContainer&gt;
-        &lt;Stack.Navigator initialRouteName="Welcome"&gt;
-          &lt;Stack.Screen
+        &lt;RootStack.Navigator initialRouteName="Welcome"&gt;
+          &lt;RootStack.Screen
             name="Welcome"
-            options={{headerHideBackButton: true, gestureEnabled: false}}
+            options={{gestureEnabled: false}}
             component={Welcome}
           /&gt;
-          &lt;Stack.Screen name="ButtonVariations" component={ButtonVariations} /&gt;
-          &lt;Stack.Screen name="Details" component={Details} /&gt;
-        &lt;/Stack.Navigator&gt;
+          &lt;RootStack.Screen
+            name="ButtonVariations"
+            component={ButtonVariations}
+          /&gt;
+          &lt;RootStack.Screen name="Details" component={Details} /&gt;
+        &lt;/RootStack.Navigator&gt;
       &lt;/NavigationContainer&gt;
     &lt;/Provider&gt;
   );
@@ -178,7 +184,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 06 2020 12:20:12 GMT+0530 (India Standard Time)
+                at Sun Nov 08 2020 21:57:29 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

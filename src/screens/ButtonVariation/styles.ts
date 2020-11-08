@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../assets/colors';
+import colors from '../../assets/colors';
 export default StyleSheet.create({
   container: {flex: 1, backgroundColor: 'black', opacity: 0.9},
 
@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
 
   textStyle: {
-    color: '#fff',
+    color: colors.steelblue,
     fontSize: 22,
   },
   containerStyles: {borderRadius: 10, margin: 20},
@@ -22,4 +22,17 @@ export default StyleSheet.create({
   title: {color: colors.yellow, alignSelf: 'center'},
 
   screenTItle: {fontSize: 25, alignSelf: 'flex-end', color: colors.white},
+
+  primary: {
+    backgroundColor: colors.steelblue,
+  },
+  buttonTitle: {
+    fontSize: 20,
+  },
+  secondary: {
+    backgroundColor: colors.transparent,
+  },
+  third: {
+    backgroundColor: colors.lightgray,
+  },
 });

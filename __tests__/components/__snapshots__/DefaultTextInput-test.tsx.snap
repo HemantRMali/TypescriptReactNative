@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DefaultTextInput renders correctly 1`] = `
+exports[`DefaultTextInput receives some text 1`] = `
 <View
   style={
     Object {
@@ -24,7 +24,7 @@ exports[`DefaultTextInput renders correctly 1`] = `
     style={
       Object {
         "color": "#49658c",
-        "fontSize": 14,
+        "fontSize": 10,
         "left": 0,
         "paddingLeft": 10,
         "position": "absolute",
@@ -56,6 +56,7 @@ exports[`DefaultTextInput renders correctly 1`] = `
     onSelectionChange={[Function]}
     onSubmitEditing={[Function]}
     rejectResponderTermination={true}
+    secureTextEntry={false}
     style={
       Object {
         "color": "#49658c",
@@ -65,6 +66,7 @@ exports[`DefaultTextInput renders correctly 1`] = `
         "zIndex": 10,
       }
     }
+    testID="userInput"
     underlineColorAndroid="transparent"
     value="Test Value"
   />

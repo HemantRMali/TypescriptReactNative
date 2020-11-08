@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
   steelblue: 'steelblue',
   lightgray: 'lightgray',
   black: 'black',
@@ -7,3 +7,5 @@ export const colors = {
   rgba240: 'rgba(240, 240, 240, 1)',
   transparent: 'transparent',
 };
+
+export default colors;

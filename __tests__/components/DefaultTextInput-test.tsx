@@ -1,19 +1,23 @@
 // __tests__/DefaultTextInput-test.js
+
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {render, fireEvent} from '@testing-library/react-native';
+
 import DefaultTextInput from '../../src/components/DefaultTextInput';
+describe('DefaultTextInput', () => {
+  const onChangeTextMock = jest.fn();
 
-test('DefaultTextInput renders correctly', () => {
-  const mock = jest.fn();
-
-  const tree = renderer
-    .create(
+  it('receives some text', () => {
+    const {getByTestId, toJSON} = render(
       <DefaultTextInput
+        testId="userInput"
         label="Test Label"
         value="Test Value"
-        onChangeText={mock}
+        onChangeText={onChangeTextMock}
       />,
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+    );
+
+    fireEvent.changeText(getByTestId('userInput'), 'Hemant Mali');
+    expect(toJSON()).toMatchSnapshot();
+  });
 });

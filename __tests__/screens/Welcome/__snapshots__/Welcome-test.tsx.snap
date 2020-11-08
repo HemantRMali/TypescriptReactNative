@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome renders correctly 1`] = `
+exports[` 1`] = `
 <View
   style={
     Object {
+      "backgroundColor": "rgba(240, 240, 240, 1)",
       "flex": 1,
     }
   }
@@ -85,6 +86,7 @@ exports[`Welcome renders correctly 1`] = `
         onFocus={[Function]}
         onSelectionChange={[Function]}
         onSubmitEditing={[Function]}
+        placeholder="Enter Full Name"
         rejectResponderTermination={true}
         secureTextEntry={false}
         style={
@@ -96,6 +98,7 @@ exports[`Welcome renders correctly 1`] = `
             "zIndex": 10,
           }
         }
+        testID="userName"
         underlineColorAndroid="transparent"
         value=""
       />
@@ -116,28 +119,32 @@ exports[`Welcome renders correctly 1`] = `
           "opacity": 1,
         }
       }
+      testID="continueButton"
     >
       <View
         style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "steelblue",
-            "borderRadius": 5,
-            "justifyContent": "center",
-            "margin": 20,
-            "padding": 15,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderRadius": 5,
+              "justifyContent": "center",
+              "margin": 20,
+              "padding": 15,
+            },
+            Object {
+              "backgroundColor": "steelblue",
+            },
+          ]
         }
       >
         <Text
           style={
             Array [
               Object {
+                "color": "white",
                 "fontSize": 20,
               },
-              Object {
-                "color": "white",
-              },
+              undefined,
             ]
           }
         >

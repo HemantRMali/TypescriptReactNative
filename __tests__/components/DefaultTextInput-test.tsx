@@ -7,7 +7,7 @@ import DefaultTextInput from '../../src/components/DefaultTextInput';
 describe('DefaultTextInput', () => {
   const onChangeTextMock = jest.fn();
 
-  it('receives some text', () => {
+  it('receives some text and renders properly', () => {
     const {getByTestId, toJSON} = render(
       <DefaultTextInput
         testId="userInput"

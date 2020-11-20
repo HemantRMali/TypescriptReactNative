@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Details renders properly 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-    }
-  }
->
+Array [
   <Text
     style={
       Array [
@@ -27,15 +20,25 @@ exports[`Details renders properly 1`] = `
     }
   >
     
-  </Text>
-  <Text
+  </Text>,
+  <View
     style={
       Object {
-        "fontSize": 30,
+        "alignItems": "center",
+        "justifyContent": "center",
       }
     }
   >
-    Details Screen
-  </Text>
-</View>
+    <Text
+      style={
+        Object {
+          "fontSize": 30,
+        }
+      }
+      testID="detail-screen-text"
+    >
+      Details Screen
+    </Text>
+  </View>,
+]
 `;

@@ -30,14 +30,6 @@ public class TargetOSManager extends ReactContextBaseJavaModule {
         return "TargetOSManager";
     }
 
-//    @Override
-//    public Map<String, Object> getConstants() {
-//        final Map<String, Object> constants = new HashMap<>();
-//        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-//        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
-//        return constants;
-//    }
-
     @ReactMethod
     public void isRunningOnDevice(Promise promise) {
         String deviceOrSimulator = "Device";
@@ -48,9 +40,4 @@ public class TargetOSManager extends ReactContextBaseJavaModule {
         promise.resolve("Running on Android " + deviceOrSimulator);
 
     }
-
-//    @ReactMethod
-//    public void show(String message, int duration) {
-//        Toast.makeText(getReactApplicationContext(), message, duration).show();
-//    }
 }

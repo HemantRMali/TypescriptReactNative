@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../assets/colors';
-import {DeviceInfo} from '../../constants';
-import commonStyles from '../../assets/styles';
+import colors from '../../assets/colors/colors';
+import {DeviceInfo} from '../../constants/constants';
+import commonStyles from '../../assets/styles/styles';
 export default StyleSheet.create({
   ...commonStyles,
   safeArea: {flex: 1},

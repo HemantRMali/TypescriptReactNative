@@ -7,11 +7,14 @@ import {render} from '@testing-library/react-native';
 
 describe('Details', () => {
   it('renders properly', () => {
-    const {toJSON} = render(
+    const {toJSON, getByTestId} = render(
       <Provider store={store}>
         <Details />
       </Provider>,
     );
+
+    const textInstance = getByTestId('detail-screen-text');
+    expect(textInstance).toBeDefined();
     expect(toJSON()).toMatchSnapshot();
   });
 });

@@ -1,18 +1,22 @@
 import * as React from 'react';
 import {Text, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import ScreenTitle from '../../components/ScreenTitle';
-import {RootState} from '../../reducers';
+import ScreenTitle from '../../components/ScreenTitle/ScreenTitle';
+import {RootState} from '../../reducers/reducers';
 import styles from './styles';
 
 const Details: React.FC = () => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
 
   return (
-    <View style={styles.container}>
+    <>
       <ScreenTitle style={styles.screenTItle} title={user.name} />
-      <Text style={styles.detailTitle}>Details Screen</Text>
-    </View>
+      <View style={styles.container}>
+        <Text testID="detail-screen-text" style={styles.detailTitle}>
+          Details Screen
+        </Text>
+      </View>
+    </>
   );
 };
 

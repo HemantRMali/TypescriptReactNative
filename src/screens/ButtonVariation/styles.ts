@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../assets/colors';
+import colors from '../../assets/colors/colors';
 export default StyleSheet.create({
   container: {flex: 1, backgroundColor: 'black', opacity: 0.9},
 

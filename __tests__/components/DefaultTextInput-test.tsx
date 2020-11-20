@@ -3,7 +3,7 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
 
-import DefaultTextInput from '../../src/components/DefaultTextInput';
+import DefaultTextInput from '../../src/components/DefaultTextInput/DefaultTextInput';
 describe('DefaultTextInput', () => {
   const onChangeTextMock = jest.fn();
 

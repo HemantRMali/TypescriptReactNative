@@ -1,19 +1,17 @@
 import * as React from 'react';
 import {Text, View, Image} from 'react-native';
-import DefaultButton from '../../components/DefaultButton';
+import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import SwipeButton from 'rn-swipe-button';
-import ScreenTitle from '../../components/ScreenTitle';
+import ScreenTitle from '../../components/ScreenTitle/ScreenTitle';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../reducers';
+import {RootState} from '../../reducers/reducers';
 import styles from './styles';
-import {Strings} from '../../constants';
-import colors from '../../assets/colors';
+import {Strings} from '../../constants/constants';
+import colors from '../../assets/colors/colors';
 
 import diamondIcon from '../../assets/images/diamond.png';
 import {RootStackParamList} from '../../../App';
 import {StackNavigationProp} from '@react-navigation/stack';
-
-const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
 
 type ButtonVariationScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -27,6 +25,7 @@ interface ButtonVariationProps {
 
 const ButtonVariation: React.FC<ButtonVariationProps> = ({navigation}) => {
   const user = useSelector((state: RootState) => state.UserReducer.user);
+  const thumbIcon = () => <Image resizeMode="center" source={diamondIcon} />;
 
   const navigateToDetails = () => {
     navigation?.navigate('Details');
@@ -64,6 +63,7 @@ const ButtonVariation: React.FC<ButtonVariationProps> = ({navigation}) => {
           railStyles={styles.railStyles}
           railBackgroundColor={colors.black}
           onSwipeSuccess={() => navigateToDetails()}
+          shouldResetAfterSuccess={true}
         />
       </View>
     </View>

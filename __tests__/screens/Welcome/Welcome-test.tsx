@@ -14,9 +14,10 @@ describe('Welcome screen', () => {
 
   describe('Tapping on continue', () => {
     it('checks the user name', () => {
+      const spy = jest.spyOn(Alert, 'alert');
       fireEvent.changeText(getByPlaceholderText('Enter Full Name'), '');
       fireEvent.press(getByTestId('continueButton'));
-      jest.spyOn(Alert, 'alert');
+      expect(spy).toHaveBeenCalledTimes(1);
 
       fireEvent.changeText(getByTestId('userName'), 'Hemant Mali');
       fireEvent.press(getByTestId('continueButton'));

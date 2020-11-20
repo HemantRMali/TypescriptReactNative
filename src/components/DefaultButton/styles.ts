@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import commonStyles from '../../assets/styles';
-import colors from '../../assets/colors';
+import commonStyles from '../../assets/styles/styles';
+import colors from '../../assets/colors/colors';
 export default StyleSheet.create({
   ...commonStyles,
   commonButtonStyle: {

@@ -19,7 +19,7 @@ const DefaultTextInput: React.FC<DefaultTextInputProps> = (props) => {
     <FloatingLabelInput
       testID={props.testId}
       containerStyles={styles.textInputContainer}
-      label={props.label}
+      label=""
       placeholder={props.placeholder}
       value={props.value}
       secureTextEntry={props.isSecure}

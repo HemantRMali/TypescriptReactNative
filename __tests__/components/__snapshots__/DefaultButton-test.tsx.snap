@@ -3,7 +3,7 @@
 exports[`DefaultButton renders properly 1`] = `
 <View
   accessible={true}
-  focusable={false}
+  focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -16,6 +16,7 @@ exports[`DefaultButton renders properly 1`] = `
       "opacity": 1,
     }
   }
+  testID="default-button"
 >
   <View
     style={

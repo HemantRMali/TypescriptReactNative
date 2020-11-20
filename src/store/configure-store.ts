@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware} from 'redux';
 import {createLogger} from 'redux-logger';
 // Imports: Redux Root Reducer
-import appReducer from '../reducers';
+import appReducer from '../reducers/reducers';
 
 // Redux: Store
 const store = createStore(appReducer, applyMiddleware(createLogger()));
